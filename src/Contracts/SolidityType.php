@@ -214,7 +214,8 @@ class SolidityType
                     if ($start == 0){
                         $l = $length * 32;
                     }else{
-                        $v_1 = Utils::toHex($value[$k-1]);
+                        $v_1 = $this->inputFormat($value[$k-1], $nestedName);
+//                        $v_1 = Utils::toHex($value[$k-1]);
                         $l = (floor((mb_strlen($v_1) + 63) / 64)+1)==2?((floor((mb_strlen($v_1) + 63) / 64)+1) * 32):((floor((mb_strlen($v_1) + 63) / 64)) * 32);
 
                     }
